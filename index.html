@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <header>
-        <div>Tik Tac Toe</div>
+        <div id="title">Tik Tac Toe</div>
         <div id="mode_box">
             <div id="player_selection">
                 <div class="player_select">Player vs. </div>
@@ -26,9 +26,21 @@
         </div>
     </header>
     <body>
-        <div class="text_display"></div>
-        <div id="grid_board"></div>
-        <button>Restart</button>
+        <div class="text_display">Player 1 wins!</div>
+        <div id="grid_board">
+            <div class="grid_child" id="grid_1">X</div>
+            <div class="grid_child" id="grid_2">O</div>
+            <div class="grid_child" id="grid_3">X</div>
+            <div class="grid_child" id="grid_4">O</div>
+            <div class="grid_child" id="grid_5">X</div>
+            <div class="grid_child" id="grid_6">O</div>
+            <div class="grid_child" id="grid_7">X</div>
+            <div class="grid_child" id="grid_8">O</div>
+            <div class="grid_child" id="grid_9">X</div>
+        </div>
+        <div id="restart">
+            <button>Restart</button>
+        </div>
         <script src="script.js"></script>
     </body>
 </html>
