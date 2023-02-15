@@ -1,13 +1,132 @@
 :root {
-    --contentWidth: 1200px;
+  --contentWidth: 1200px;
 }
+
 @font-face {
-    font-family: "FrederickatheGreat-Regular";
-    src: url("./FrederickatheGreat-Regular.woff");
+  font-family: "FrederickatheGreat-Regular";
+  src: url("./FrederickatheGreat-Regular.woff");
 }
 
 html {
-    font-family: "FrederickatheGreat-Regular";
-    margin: 0;
-    height: 100vh;
+  font-family: "FrederickatheGreat-Regular";
+  margin: 0;
+  height: 100vh;
+  background-color: #64748b;
+}
+
+button {
+  font-family: "FrederickatheGreat-Regular";
+  font-size: 1rem;
+}
+
+/* ---------- HEADER ---------- */
+
+#title {
+  color: #f1f5f9;
+  font-size: 3rem;
+  padding-bottom: 10px;
+}
+
+.text_display {
+    color: #f1f5f9;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 15px;
+}
+
+/* ---------- MODE BOX ---------- */
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#mode_box {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+
+.player_select,
+.ai_select,
+.player_name,
+.side_selection_X,
+.side_selection_O {
+  color: #f1f5f9;
+  font-size: 1.5rem;
+}
+
+#player_selection {
+    display: flex;
+}
+
+#name_and_side_selection {
+    display: flex;
+}
+
+/* ---------- GRID BOARD ---------- */
+
+#grid_board {
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
+  grid-template-areas:
+    "one two three"
+    "four five six"
+    "seven eight nine";
+  justify-content: center;
+}
+
+.grid_child {
+  display: grid;
+  background-color: white;
+  color: #1e293b;
+  justify-items: center;
+  align-items: center;
+  border: 2px solid #64748b;
+  font-size: 6rem;
+}
+
+#grid_1 {
+  grid-area: one;
+}
+
+#grid_2 {
+  grid-area: two;
+}
+
+#grid_3 {
+  grid-area: three;
+}
+
+#grid_4 {
+  grid-area: four;
+}
+
+#grid_5 {
+  grid-area: five;
+}
+
+#grid_6 {
+  grid-area: six;
+}
+
+#grid_7 {
+  grid-area: seven;
+}
+
+#grid_8 {
+  grid-area: eight;
+}
+
+#grid_9 {
+  grid-area: nine;
+}
+
+#restart {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
 }
