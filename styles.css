@@ -1,9 +1,13 @@
 :root {
     --contentWidth: 1200px;
 }
+@font-face {
+    font-family: "FrederickatheGreat-Regular";
+    src: url("./FrederickatheGreat-Regular.woff");
+}
 
 html {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: "FrederickatheGreat-Regular";
     margin: 0;
     height: 100vh;
 }
