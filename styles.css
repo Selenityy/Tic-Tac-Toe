@@ -1,0 +1,9 @@
+:root {
+    --contentWidth: 1200px;
+}
+
+html {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    height: 100vh;
+}
