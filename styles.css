@@ -16,7 +16,7 @@ html {
 
 button {
   font-family: "FrederickatheGreat-Regular";
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* ---------- HEADER ---------- */
@@ -28,19 +28,19 @@ button {
 }
 
 .text_display {
-    color: #f1f5f9;
-    font-size: 2rem;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 15px;
+  color: #f1f5f9;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
 }
 
 /* ---------- MODE BOX ---------- */
 
 header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 #mode_box {
@@ -58,12 +58,18 @@ header {
   font-size: 1.5rem;
 }
 
-#player_selection {
-    display: flex;
+#myForm {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-#name_and_side_selection {
-    display: flex;
+input {
+  display: flex;
+}
+
+label {
+  display: flex;
 }
 
 /* ---------- GRID BOARD ---------- */
@@ -126,7 +132,31 @@ header {
 }
 
 #restart {
-    display: flex;
-    justify-content: center;
-    padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  align-items: center;
+}
+
+#restart_btn {
+  transition-duration: 0.4s;
+  background-color: #e2e8f0;
+  color: black;
+  border-radius: 15px;
+  padding: 15px;
+  border: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#restart_btn:hover {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+#restart_btn:active {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 5px #334155;
+  transform: translateY(5px);
+  transition-duration: 0.4s;
 }
