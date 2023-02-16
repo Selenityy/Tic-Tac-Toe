@@ -1,19 +1,44 @@
 <!DOCTYPE html>
 <html lang="en-US">
-    <head>
-        <meta charset="UTF-8" />
-        <title>Tik Tac Toe</title>
-        <link rel="stylesheet" href="styles.css" />
-    </head>
-    <header>
-        <div id="title">Tik Tac Toe</div>
-        <div id="mode_box">
-            <div id="player_selection">
-                <div class="player_select">Player vs. </div>
-                <div class="ai_select">AI</div>
-                <div class="player_select">Player</div>
-            </div>
-            <div id="name_and_side_selection">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tik Tac Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <header>
+    <div id="title">Tik Tac Toe</div>
+    <div id="mode_box">
+      <!-- <div id="player_selection"> -->
+      <!-- <div class="player_select">Player vs. </div> -->
+      <!-- <div class="ai_select">AI</div> -->
+      <!-- <div class="player_select">Player</div> -->
+      <!-- </div> -->
+      <fieldset>
+        <form name="myForm" id="myForm" action="" method="GET">
+          <label for="playerName">Player 1: </label>
+          <input
+            type="text"
+            id="playerName"
+            name="playerName"
+            placeholder="Name"
+            pattern="^[a-zA-Z0-9_.-]*$"
+          />
+          <button>X</button>
+          <button>O</button>
+
+          <label for="playerName">Player 2: </label>
+          <input
+            type="text"
+            id="playerName"
+            name="playerName"
+            placeholder="Name"
+            pattern="^[a-zA-Z0-9_.-]*$"
+          />
+          <button>X</button>
+          <button>O</button>
+        </form>
+      </fieldset>
+      <!-- <div id="name_and_side_selection">
                 <div class="player_name">Player 1: 
                     <div class="side_selection_X">X</div>
                     <div class="side_selection_O">O</div>
@@ -22,25 +47,25 @@
                     <div class="side_selection_X">X</div>
                     <div class="side_selection_O">O</div>
                 </div>
-            </div>
-        </div>
-    </header>
-    <body>
-        <div class="text_display">Player 1 wins!</div>
-        <div id="grid_board">
-            <div class="grid_child" id="grid_1">X</div>
-            <div class="grid_child" id="grid_2">O</div>
-            <div class="grid_child" id="grid_3">X</div>
-            <div class="grid_child" id="grid_4">O</div>
-            <div class="grid_child" id="grid_5">X</div>
-            <div class="grid_child" id="grid_6">O</div>
-            <div class="grid_child" id="grid_7">X</div>
-            <div class="grid_child" id="grid_8">O</div>
-            <div class="grid_child" id="grid_9">X</div>
-        </div>
-        <div id="restart">
-            <button>Restart</button>
-        </div>
-        <script src="script.js"></script>
-    </body>
+            </div> -->
+    </div>
+  </header>
+  <body>
+    <div class="text_display">Player 1 wins!</div>
+    <div id="grid_board">
+      <div class="grid_child" id="grid_1">X</div>
+      <div class="grid_child" id="grid_2">O</div>
+      <div class="grid_child" id="grid_3">X</div>
+      <div class="grid_child" id="grid_4">O</div>
+      <div class="grid_child" id="grid_5">X</div>
+      <div class="grid_child" id="grid_6">O</div>
+      <div class="grid_child" id="grid_7">X</div>
+      <div class="grid_child" id="grid_8">O</div>
+      <div class="grid_child" id="grid_9">X</div>
+    </div>
+    <div id="restart">
+      <button id="restart_btn">Restart</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>
