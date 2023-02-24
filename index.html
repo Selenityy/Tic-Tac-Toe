@@ -7,35 +7,56 @@
   </head>
   <body>
     <div id="title">Tic Tac Toe</div>
+    <div class="text_display">Player 1 wins!</div>
     <div id="left_body">
       <div id="mode_box">
         <fieldset id="player_selection">
           <form name="myForm" id="myForm" action="" method="GET">
-            <label for="playerName">Player 1: </label>
+            <label id="playerOne" for="playerName1">Player 1: </label>
             <input
               type="text"
               class="players"
-              id="playerName"
-              name="playerName"
+              id="playerName1"
+              name="playerName1"
               placeholder="Name"
               pattern="^[a-zA-Z0-9_.-]*$"
             />
-            <button id="X" class="button">X</button>
-            <button id="X" class="button">O</button>
-
+            <ul id="xo">
+              <li id="x">
+                <input type="radio" id="x" name="sides" value="x" checked />
+                <label id="x" for="x">X</label>
+              </li>
+              <li id="o">
+                <input type="radio" id="o" name="sides" value="o" />
+                <label id="o" for="o">O</label>
+              </li>
+            </ul>
             <div id="vs" class="players">vs.</div>
-
-            <label for="playerName">Player 2: </label>
+            <label id="playerTwo" for="playerName2">Player 2: </label>
             <input
               type="text"
               class="players"
-              id="playerName"
-              name="playerName"
+              id="playerName2"
+              name="playerName2"
               placeholder="Name"
               pattern="^[a-zA-Z0-9_.-]*$"
             />
-            <button id="X" class="button">Human</button>
-            <button id="X" class="button">AI</button>
+            <ul id="humanAi">
+              <li id="human">
+                <input
+                  type="radio"
+                  id="human"
+                  name="type"
+                  value="human"
+                  checked
+                />
+                <label id="human" for="human">Human</label>
+              </li>
+              <li id="ai">
+                <input type="radio" id="ai" name="type" value="ai" />
+                <label id="ai" for="ai">AI</label>
+              </li>
+            </ul>
           </form>
         </fieldset>
       </div>
@@ -44,7 +65,6 @@
       </div>
     </div>
     <div id="right_body">
-      <div class="text_display">Player 1 wins!</div>
       <div id="grid_board">
         <div class="grid_child" id="grid_1">X</div>
         <div class="grid_child" id="grid_2">O</div>
