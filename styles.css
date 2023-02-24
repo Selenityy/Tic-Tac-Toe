@@ -24,7 +24,7 @@ button {
 #title {
   color: #f1f5f9;
   font-size: 3rem;
-  padding-bottom: 10px;
+  padding-bottom: 20px;
 }
 
 .text_display {
@@ -32,7 +32,7 @@ button {
   font-size: 2rem;
   display: flex;
   justify-content: center;
-  padding-bottom: 15px;
+  padding-bottom: 20px;
 }
 
 /* ---------- MODE BOX ---------- */
@@ -49,27 +49,61 @@ header {
   padding-bottom: 15px;
 }
 
-.player_select,
-.ai_select,
-.player_name,
-.side_selection_X,
-.side_selection_O {
+#player_selection {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.players {
   color: #f1f5f9;
   font-size: 1.5rem;
-}
-
-#myForm {
-  color: white;
+  padding: 10px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
 }
 
-input {
+.button_div {
   display: flex;
 }
 
-label {
+.button {
   display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  align-items: center;
+  transition-duration: 0.4s;
+  background-color: #e2e8f0;
+  color: black;
+  border-radius: 15px;
+  padding: 15px;
+  margin-right: 5px;
+  border: none;
+  font-size: 1.2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* .button:hover {
+  background-color: #1e293b;
+  color: #e2e8f0;
+} */
+
+.button:active {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 5px #334155;
+  transform: translateY(5px);
+  transition-duration: 0.4s;
+}
+
+.button:focus {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+.button:visited {
+  background-color: #1e293b;
+  color: #e2e8f0;
 }
 
 /* ---------- GRID BOARD ---------- */
@@ -135,10 +169,11 @@ label {
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  padding-bottom: 20px;
   align-items: center;
 }
 
-#restart_btn {
+#start_btn {
   transition-duration: 0.4s;
   background-color: #e2e8f0;
   color: black;
@@ -148,12 +183,12 @@ label {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#restart_btn:hover {
+#start_btn:hover {
   background-color: #1e293b;
   color: #e2e8f0;
 }
 
-#restart_btn:active {
+#start_btn:active {
   background-color: #1e293b;
   color: #e2e8f0;
   box-shadow: 0 5px #334155;
