@@ -1,3 +1,5 @@
+/* ---------- HTML SKELETON ---------- */
+
 :root {
   --contentWidth: 1200px;
 }
@@ -19,12 +21,17 @@ button {
   font-size: 1.5rem;
 }
 
+ul {
+  list-style: none;
+}
+
 body {
   display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: auto 1fr;
+  grid-template-columns: 20% 50%;
+  grid-template-rows: auto auto 1fr;
   grid-template-areas:
     "header header"
+    "- text"
     "left right";
 }
 
@@ -32,14 +39,25 @@ body {
 
 #title {
   color: #f1f5f9;
-  font-size: 3rem;
-  padding-bottom: 20px;
+  font-size: 3.5rem;
   padding-top: 20px;
   padding-left: 20px;
   grid-area: header;
 }
 
-/* ---------- MODE BOX ---------- */
+/* ---------- TEXT DISPLAY ---------- */
+
+.text_display {
+  color: #f1f5f9;
+  grid-area: text;
+  font-size: 1.5rem;
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+
+/* ---------- LEFT BODY ---------- */
 
 #left_body {
   grid-area: left;
@@ -48,52 +66,128 @@ body {
   padding-left: 20px;
 }
 
+/* ---------- MODE BOX ---------- */
+
 #mode_box {
-  display: flex;
-  flex-direction: column;
   padding-bottom: 15px;
 }
 
-#player_selection {
-  display: flex;
-  padding-bottom: 20px;
-}
-
-.players {
+#myForm {
   color: #f1f5f9;
   font-size: 1.5rem;
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(7, 0.5fr);
+  grid-template-areas:
+    "player1 player1 player1"
+    "name1 name1 name1"
+    "sides sides ."
+    "vs vs vs"
+    "player2 player2 player2"
+    "name2 name2 name2"
+    "type type .";
+  gap: 10px;
+}
+
+#playerOne {
+  grid-area: player1;
+}
+
+#playerTwo {
+  grid-area: player2;
+}
+
+#playerName1 {
+  grid-area: name1;
+  color: black;
+  font-size: 1rem;
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.button_div {
+#playerName2 {
+  grid-area: name2;
+  color: black;
+  font-size: 1rem;
+  padding: 10px;
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.button {
+#vs {
+  color: #f1f5f9;
+  font-size: 1.8rem;
+  grid-area: vs;
+  display: flex;
+  justify-content: center;
+}
+
+#xo {
+  grid-area: sides;
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-areas: "X O";
+  gap: 8%;
+}
+
+#x {
+  grid-area: X;
+}
+
+#o {
+  grid-area: O;
+}
+
+#humanAi {
+  grid-area: type;
+  padding: 0px;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: repeat(2, max-content);
+  grid-template-areas: "human ai";
+  gap: 8%;
+}
+
+#human {
+  grid-area: human;
+}
+
+#ai {
+  grid-area: ai;
+}
+
+/* ---------- RESTART/START BUTTON ---------- */
+
+#restart {
   display: flex;
   justify-content: center;
   padding-top: 20px;
+  padding-bottom: 20px;
   align-items: center;
+}
+
+#start_btn {
   transition-duration: 0.4s;
   background-color: #e2e8f0;
   color: black;
   border-radius: 15px;
   padding: 15px;
-  margin-right: 5px;
   border: none;
-  font-size: 1.2rem;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-/* .button:hover {
+#start_btn:hover {
   background-color: #1e293b;
   color: #e2e8f0;
-} */
+}
 
-.button:active {
+#start_btn:active {
   background-color: #1e293b;
   color: #e2e8f0;
   box-shadow: 0 5px #334155;
@@ -101,27 +195,13 @@ body {
   transition-duration: 0.4s;
 }
 
-.button:focus {
-  background-color: #1e293b;
-  color: #e2e8f0;
-}
+/* ---------- RIGHT BODY ---------- */
 
-.button:visited {
-  background-color: #1e293b;
-  color: #e2e8f0;
-}
-
-/* ---------- TEXT DISPLAY ---------- */
 #right_body {
   grid-area: right;
-}
-
-.text_display {
-  color: #f1f5f9;
-  font-size: 2rem;
   display: flex;
-  justify-content: center;
-  padding-bottom: 20px;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* ---------- GRID BOARD ---------- */
@@ -181,35 +261,4 @@ body {
 
 #grid_9 {
   grid-area: nine;
-}
-
-#restart {
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  align-items: center;
-}
-
-#start_btn {
-  transition-duration: 0.4s;
-  background-color: #e2e8f0;
-  color: black;
-  border-radius: 15px;
-  padding: 15px;
-  border: none;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#start_btn:hover {
-  background-color: #1e293b;
-  color: #e2e8f0;
-}
-
-#start_btn:active {
-  background-color: #1e293b;
-  color: #e2e8f0;
-  box-shadow: 0 5px #334155;
-  transform: translateY(5px);
-  transition-duration: 0.4s;
 }
