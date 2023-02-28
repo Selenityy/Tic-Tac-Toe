@@ -172,7 +172,7 @@ body {
   align-items: center;
 }
 
-#start_btn {
+#startBtn {
   transition-duration: 0.4s;
   background-color: #e2e8f0;
   color: black;
@@ -182,12 +182,12 @@ body {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#start_btn:hover {
+#startBtn:hover {
   background-color: #1e293b;
   color: #e2e8f0;
 }
 
-#start_btn:active {
+#startBtn:active {
   background-color: #1e293b;
   color: #e2e8f0;
   box-shadow: 0 5px #334155;
@@ -224,7 +224,7 @@ body {
   justify-items: center;
   align-items: center;
   border: 2px solid #64748b;
-  font-size: 6rem;
+  font-size: 8rem;
 }
 
 #grid_1 {
