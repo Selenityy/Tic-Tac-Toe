@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="title">Tic Tac Toe</div>
-    <div class="text_display">Player 1 wins!</div>
+    <div id="text_display" class="text_display"></div>
     <div id="left_body">
       <div id="mode_box">
         <fieldset id="player_selection">
@@ -19,14 +19,15 @@
               id="playerName1"
               name="playerName1"
               placeholder="Name"
+              required
             />
             <ul id="xo">
               <li id="x">
-                <input type="radio" id="x" name="sides" value="x" checked />
+                <input type="radio" id="x" name="sides" value="x" required />
                 <label id="x" for="x">X</label>
               </li>
               <li id="o">
-                <input type="radio" id="o" name="sides" value="o" />
+                <input type="radio" id="o" name="sides" value="o" required />
                 <label id="o" for="o">O</label>
               </li>
             </ul>
@@ -38,6 +39,7 @@
               id="playerName2"
               name="playerName2"
               placeholder="Name"
+              required
             />
             <ul id="humanAi">
               <li id="human">
@@ -47,24 +49,27 @@
                   name="type"
                   value="human"
                   checked
+                  required
                 />
                 <label id="human" for="human">Human</label>
               </li>
               <li id="ai">
-                <input type="radio" id="ai" name="type" value="ai" />
+                <input type="radio" id="ai" name="type" value="ai" required />
                 <label id="ai" for="ai">AI</label>
               </li>
             </ul>
-          </form>
+            <!-- <button type="submit" id="submitBtn" value="Click">Submit</button> -->
+          <!-- </form> -->
         </fieldset>
       </div>
       <div id="restart">
-        <button onclick="toggle()" id="start_btn">Start</button>
+        <button type="submit" onclick="toggle()" id="startBtn">Start</button>
       </div>
+    </form>
     </div>
     <div id="right_body">
       <div id="grid_board">
-        <div class="grid_child" id="grid_1"></div>
+        <div class="grid_child" id="grid_1" mark=""></div>
         <div class="grid_child" id="grid_2"></div>
         <div class="grid_child" id="grid_3"></div>
         <div class="grid_child" id="grid_4"></div>
