@@ -1,10 +1,7 @@
 window.onload = function () {
   const form = document.getElementById("myForm");
   const startBtn = document.getElementById("startBtn");
-  //   const gameBtn = document.querySelector("#startBtn");
-  const btnText = startBtn.innerHTML;
   const squares = document.querySelectorAll(".grid_child");
-//   const players = [];
   let currentPlayer;
 
   // Player creation object
@@ -15,19 +12,11 @@ window.onload = function () {
     };
   };
 
-  // Start button toggle function
-  // eslint-disable-next-line no-unused-vars
-  //   const toggle = () => {
-  //     gameBtn.innerHTML = btnText === "Start" ? "Restart" : "Start";
-  //   };
-
   // Rules to winning
   const gameOver = () => {};
 
   // Marks the game board
   const markSquare = (e) => {
-    console.log(currentPlayer);
-    console.log(currentPlayer.side);
     if (e.target.getAttribute("mark") === "") {
       e.target.setAttribute("mark", currentPlayer.side);
       e.target.innerHTML = currentPlayer.side;
@@ -51,22 +40,22 @@ window.onload = function () {
       square.addEventListener("click", markSquare);
     });
 
-    // let element = document.getElementById("restart");
-    // let replayBtn = document.createElement("button");
-    // replayBtn.innerHTML = "Restart"
-    // replayBtn.onclick = function() {
-
-    // };
-    // element.appendChild(replayBtn);
+    const element = document.getElementById("restart");
+    const replayBtn = document.createElement("button");
+    replayBtn.setAttribute("id", "restartBtn");
+    replayBtn.innerHTML = "Restart";
+    replayBtn.onclick = function () {
+      form.reset();
+      document.getElementById("text_display").innerHTML = "";
+      squares.forEach((square) => {
+        square.setAttribute("mark", "");
+        square.innerHTML = "";
+      });
+      replayBtn.style.display = "none";
+      startBtn.style.display = "block";
+    };
+    element.appendChild(replayBtn);
   };
-
-  // Clicking restart button triggers the following:
-  function reset() {
-    form.reset();
-    startBtn.innerHTML = btnText === "Restart" ? "Start" : "Restart";
-    squares.innerHTML = "";
-    squares.setAttribute("mark") === "";
-  }
 
   // Clicking start button triggers the following:
   startBtn.onclick = function (e) {
@@ -79,17 +68,14 @@ window.onload = function () {
       'input[name="sides"]:not(:checked)'
     ).value;
 
+    // eslint-disable-next-line prefer-const
     let player1 = playerFactory(formName1, formSide1);
+    // eslint-disable-next-line prefer-const
     let player2 = playerFactory(formName2, formSide2);
-    // player1.toString();
-    // player2.toString();
-
-    // players.push(player1);
-    // players.push(player2);
-
-    // toggle();
 
     e.preventDefault();
+
+    startBtn.style.display = "none";
 
     newGame(player1, player2);
   };
