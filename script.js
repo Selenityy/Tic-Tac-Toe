@@ -6,10 +6,11 @@ window.onload = function () {
   let players = [];
 
   // Player creation object
-  const playerFactory = (name, side) => {
+  const playerFactory = (name, side, type) => {
     return {
       name,
       side,
+      type,
     };
   };
 
@@ -71,7 +72,26 @@ window.onload = function () {
       currentPlayer = currentPlayer === players[0] ? players[1] : players[0];
       document.getElementById("text_display").innerHTML =
         "It's" + " " + currentPlayer.name + "'s" + " " + "turn.";
+      if (currentPlayer.type === "ai") {
+        aiTurn(currentPlayer);
+      }
     }
+  };
+
+  // AI Turn
+  const aiTurn = (currentPlayer) => {
+    let aiTurnIsOver = false;
+    while (!aiTurnIsOver) {
+      let randNum = Math.floor(Math.random() * 9) + 1;
+      let randSquare = document.getElementById("grid_" + randNum);
+      if (randSquare.getAttribute("mark") === "") {
+        randSquare.setAttribute("mark", currentPlayer.side);
+        randSquare.innerHTML = currentPlayer.side;
+        aiTurnIsOver = true;
+      }
+    }
+
+    gameOver();
   };
 
   // Marks the game board
@@ -117,6 +137,10 @@ window.onload = function () {
       startBtn.style.display = "block";
     };
     element.appendChild(replayBtn);
+
+    if (currentPlayer.type === "ai") {
+      aiTurn(currentPlayer);
+    }
   };
 
   // Clicking start button triggers the following:
@@ -129,11 +153,14 @@ window.onload = function () {
     const formSide2 = document.querySelector(
       'input[name="sides"]:not(:checked)'
     ).value;
+    const typeOfPlayer2 = document.querySelector(
+      'input[name="type"]:checked'
+    ).value;
 
     // eslint-disable-next-line prefer-const
     let player1 = playerFactory(formName1, formSide1);
     // eslint-disable-next-line prefer-const
-    let player2 = playerFactory(formName2, formSide2);
+    let player2 = playerFactory(formName2, formSide2, typeOfPlayer2);
     players.push(player1, player2);
 
     e.preventDefault();
